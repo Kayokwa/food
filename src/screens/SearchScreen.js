@@ -5,7 +5,7 @@ import useResults from "../hooks/useResults";
 import { ResultList } from "../components/ResultList";
 import { ScrollView } from "react-native-gesture-handler";
 
-function SearchScreen() {
+function SearchScreen({ navigation }) {
   const [term, setTerm] = useState("");
   const [searchApi, results, errorMessage] = useResults();
 
@@ -25,11 +25,20 @@ function SearchScreen() {
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <ScrollView>
         <ResultList
+          navigation={navigation}
           results={filterResultsByPrice("$")}
           title="Cost Effective"
         />
-        <ResultList results={filterResultsByPrice("$$")} title="Bit Pricier" />
-        <ResultList results={filterResultsByPrice("$$$")} title="Big Spender" />
+        <ResultList
+          navigation={navigation}
+          results={filterResultsByPrice("$$")}
+          title="Bit Pricier"
+        />
+        <ResultList
+          navigation={navigation}
+          results={filterResultsByPrice("$$$")}
+          title="Big Spender"
+        />
       </ScrollView>
     </>
   );
