@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
-export function ResultsShowScreen() {
+export function ResultsShowScreen({ route }) {
   return (
     <View>
-      <Text>Show results here</Text>
+      <Text>Show results here: {route.params.itemId}</Text>
     </View>
   );
 }
