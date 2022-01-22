@@ -16,7 +16,7 @@ function SearchScreen() {
   }
 
   return (
-    <View style={{ flex: 1 }}>
+    <>
       <SearchBar
         term={term}
         onTermChange={setTerm}
@@ -31,7 +31,7 @@ function SearchScreen() {
         <ResultList results={filterResultsByPrice("$$")} title="Bit Pricier" />
         <ResultList results={filterResultsByPrice("$$$")} title="Big Spender" />
       </ScrollView>
-    </View>
+    </>
   );
 }
 
