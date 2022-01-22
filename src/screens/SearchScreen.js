@@ -6,7 +6,11 @@ function SearchScreen() {
   const [term, setTerm] = useState("");
   return (
     <View>
-      <SearchBar term={term} onTermChange={(newTerm) => setTerm(newTerm)} />
+      <SearchBar
+        term={term}
+        onTermChange={(newTerm) => setTerm(newTerm)}
+        onTermSubmit={console.log("submitted")}
+      />
       <Text>Search Screen</Text>
     </View>
   );
