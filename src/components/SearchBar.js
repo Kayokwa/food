@@ -10,7 +10,7 @@ export function SearchBar({ term, onTermChange, onTermSubmit }) {
         placeholder="Search"
         style={styles.inputStyle}
         value={term}
-        onChange={onTermChange}
+        onChangeText={onTermChange}
         autoCapitalize="none"
         autoCorrect={false}
         onEndEditing={onTermSubmit}
